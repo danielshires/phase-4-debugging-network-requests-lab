@@ -63,11 +63,25 @@ developing your own process.
 - Add a new toy when the toy form is submitted
 
   - How I debugged:
+  
+  - Submitted form in client browser
+  - Name error in toys controlloer in ROR logs
+  - Toys plural, changed to Toy
 
 - Update the number of likes for a toy
 
   - How I debugged:
+  - Clicked 'Like' on a toy tile
+  - 'Unxpected end of JSON input" in client log
+  - Update method in Toys controller, added "render json: toy, status: :ok"
+  - "Unpermitted parameter: :id" in ROR logs
+  - Checked database for id 
+  - Added :id to params.permit in toys_controller
+  - 
 
 - Donate a toy to Goodwill (and delete it from our database)
 
   - How I debugged:
+  - ROR Error "ActionController::RoutingError (No route matches [DELETE] "/toys/2"):"
+  - Checked config/routes file
+  - Added :destroy to routes parameter
